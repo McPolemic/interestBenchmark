@@ -18,7 +18,8 @@ double monthlyInterest(float balance, float rate, int days)
     return totalInterest;
 }
 
-void work() {
+void work()
+{
     int i;
     for (i = 0; i < NUM_ITERS; i++)
         monthlyInterest(50000, 0.03, 30);
