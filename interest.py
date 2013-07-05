@@ -7,11 +7,11 @@ def monthly_interest(starting_balance, rate, days=30):
 	
 	for i in range(days):
 		interest = balance * daily_rate
-		total_interest += interest
-		balance += interest
-	
-	return total_interest
+        yield interest
+
+def total_interest(balance, rate, days=30):
+    return sum(monthly_interest(balance, rate, days))
 
 if __name__ == '__main__':
     for i in range(100000):
-        monthly_interest(50000, 0.03)
+        total_interest(50000, 0.03)
