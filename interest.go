@@ -13,8 +13,10 @@ func Interest(start float64, rate float64, days int) (total float64) {
 
 	return total
 }
+
 func main() {
-	for i := 0; i < 10000; i++ {
+    runtime.GOMAXPROCS(4)
+	for i := 0; i < 1000; i++ {
         go func(){
             for j := 0; j < 10000000; j++ {
                 Interest(50000, 0.03, 30)
